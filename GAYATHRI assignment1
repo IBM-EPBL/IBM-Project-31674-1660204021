@@ -1,0 +1,24 @@
+Void setup()
+{
+Serial.begin(9600);
+PinMode(3,OUTPUT);
+}
+void loop()
+{
+if(Serial.available()>0)
+{
+String data=Serial.readString();
+if(data=="Light on")
+{
+digitalWrite(3,HIGH);
+Serial.println("Light on");
+delay(100);
+}
+if(data=="Light off")
+{
+digitalWrite(3,LOW);
+Serial.println("Light off");
+delay(100);
+}
+}
+}
